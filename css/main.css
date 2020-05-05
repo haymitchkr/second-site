@@ -760,6 +760,7 @@ header {
         background-color: #f2b704; }
 
 .about {
+  overflow: hidden
   margin-bottom: 100px; }
   .about .about-company {
     text-align: center;
@@ -1210,7 +1211,8 @@ header {
   width: 50%;
   margin: 0 auto;
   text-align: center;
-  position: relative; }
+  position: relative;
+  overflow: hidden}
   @media (max-width: 1000px) {
     .advantages {
       width: 65%; } }
