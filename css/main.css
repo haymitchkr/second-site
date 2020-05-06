@@ -1354,7 +1354,7 @@ header {
         margin-bottom: 20px; } }
     .advantages-item__text h4 {
       color: #000000;
-      font-family: Roboto Slab;
+      font-family: RobotoSlab;
       font-size: 26px;
       font-weight: 700;
       font-variant: small-caps;
@@ -1367,7 +1367,7 @@ header {
           font-size: 18px; } }
     .advantages-item__text p {
       color: #000000;
-      font-family: Roboto Slab;
+      font-family: RobotoSlab;
       font-size: 22px;
       font-weight: 400;
       line-height: 28px;
