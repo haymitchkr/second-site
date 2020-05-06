@@ -58,7 +58,8 @@ header {
   position: relative;
   display: block;
   min-width: 120px;
-  z-index: 0; }
+  z-index: 0;
+  font-weight: bold}
   .logo span {
     color: #f56e0c;
     line-height: 50px;
