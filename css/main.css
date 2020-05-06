@@ -1134,7 +1134,8 @@ header {
         .procedure .procedure-row__title h1 {
           font-size: 18px;
           width: 100%;
-          margin-bottom: 60px; } }
+          margin-bottom: 80px;
+          text-align: center; } }
     .procedure .procedure-row__title .call-button {
       position: absolute;
       right: 0;
@@ -1147,7 +1148,7 @@ header {
       @media (max-width: 520px) {
         .procedure .procedure-row__title .call-button {
           display: block;
-          top: 60px;
+          top: 50px;
           left: -webkit-calc(50% - 75px);
           left: calc(50% - 75px); } }
   .procedure .procedure-row .row-items {
