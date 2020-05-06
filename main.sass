@@ -1,0 +1,1196 @@
+@import "fonts"
+
+*
+	box-sizing: border-box
+body
+	font-family: MyriadPro
+body, html
+	overflow-x: hidden
+
+h1, h2
+	font-family: RobotoSlab
+a
+	text-decoration: none
+.container
+	max-width: 1140px
+	margin: 0 auto
+	padding: 0 15px
+header
+	background-image: url(../img/heading-bottom-bg.png)
+	background-repeat: no-repeat
+	background-position: bottom center
+.logo
+	text-transform: uppercase
+	position: relative
+	display: block
+	min-width: 120px
+	z-index: 0
+	span
+		color: #f56e0c
+		line-height: 50px
+		text-align: center
+		display: inline-block
+		z-index: 2
+
+	span:first-child
+		color: #fff
+		background-color: #8b16ac
+		width: 50px
+		height: 50px
+		border-radius: 50%
+		margin-right: 10px
+		position: relative
+		z-index: 2
+		&::before
+			content: ""
+			position: absolute
+			height: 30px
+			width: 60px
+			background-color: #f56e0c
+			z-index: -1
+			top: calc(50% - 15px)
+			left: calc(50% - 30px)
+	@media (max-width: 768px)
+		min-width: 80px
+		span
+			font-size: 0.8rem
+			line-height: 40px
+		span:first-child
+			width: 40px
+			height: 40px
+			&::before
+				height: 20px
+				width: 46px
+				top: calc(50% - 10px)
+				left: calc(50% - 23px)
+	
+.button
+	height: 50px
+	background-color: #00ad5d
+	width: 200px
+	border: none
+	border-radius: 20px
+	color: #ffffff
+	padding: 0
+	cursor: pointer
+	&:hover
+		background-color: #009450
+		transition: background-color 0.3s
+.call-button
+	font-size: 18px
+	font-weight: 700
+.header-nav
+	display: flex
+	justify-content: space-between
+	align-items: center
+	height: 90px
+	font-family: MyriadPro
+	font-weight: 700
+	text-transform: uppercase
+	@media (max-width: 768px)
+		height: 60px
+		position: fixed
+		z-index: 100
+		top: 0
+		left: 0
+		padding: 0 15px
+		background-color: #fff
+		box-shadow: 0 1px 5px 0 #e0177d
+		width: 100%
+	&__logo
+		@media(max-width: 768px)
+			order: 1
+	&__burger
+		cursor: pointer
+		position: relative
+		display: none
+		width: 30px
+		height: 20px
+		transition: all 0.4s
+		@media(max-width: 768px)
+			order: 5
+			display: block
+		span
+			width: 100%
+			height: 4px
+			background-color: #000
+			z-index: 10
+			position: absolute
+			border-radius: 5px
+			transition-delay: 0.2s
+		&::after,&::before
+			content: ""
+			position: absolute
+			height: 4px
+			width: 100%
+			border-radius: 5px
+			background-color: #000
+			transition-delay: 0.2s
+		&::before
+			top: calc(50% - 2px)
+		&::after
+			bottom: 0
+	&__burger.active
+		transform: rotate(180deg)
+		span
+			background-color: #ffc000
+		&::before
+			background-color: #e0177d
+		&::after
+			background-color: #34a5dd
+		
+	.nav-list
+		display: flex
+		justify-content: space-between
+		align-items: center
+		width: 100%
+		@media (max-width: 768px)
+			order: 3
+			justify-content: center
+			max-width: 300px
+		&__items.active
+			@media (max-width: 768px)
+				display: block
+				position: absolute
+				visibility: visible
+				transition: all 0.3s
+				opacity: 1
+			.nav-list__link
+				right: 0
+				&:nth-child(1)
+					transition: 0.2s
+					background-color: #34a5dd
+				&:nth-child(2)
+					transition: 0.3s
+					background-color: #e0177d
+				&:nth-child(3)
+					transition: 0.4s
+					background-color: #fce900
+				&:nth-child(4)
+					transition: 0.5s
+					background-color: #00ad5d
+				&:nth-child(5)
+					transition: 0.6s
+					background-color: #575253
+				a
+					display: block
+					padding: 10px 15px
+		&__items
+			display: flex
+			list-style-type: none
+			font-size: 16px
+			font-weight: 700
+			text-transform: uppercase
+			padding: 0
+			@media (min-width: 1030px)
+				padding-left: 40px
+			@media (max-width: 885px)
+				font-size: 12px
+			@media (max-width: 768px)
+				font-size: 20px
+				display: block
+				position: absolute
+				top: 50px
+				right: -50px
+				transition: all 0.4s
+				opacity: 0
+				visibility: hidden
+				border-radius: 5px
+				min-width: 200px
+		&__link
+			display: block
+			&:nth-child(1)
+				transition: 0.6s
+			&:nth-child(2)
+				transition: 0.5s
+			&:nth-child(3)
+				transition: 0.4s
+			&:nth-child(4)
+				transition: 0.3s
+			&:nth-child(5)
+				transition: 0.2s
+			@media (max-width: 768px)
+				position: relative
+				right: -150px
+			&:hover
+				margin-top: -5px
+				transition: all 0.3s
+				@media (max-width: 768px)
+					margin: 0
+			a
+				color: #000000
+				padding: 25px 20px
+				@media (max-width: 990px)
+					padding: 25px 10px
+				@media (max-width: 768px)
+					margin: 0
+					color: #fff
+					display: block
+					padding: 10px 15px
+		&__call-button
+			text-transform: uppercase
+			height: 40px
+			width: 170px
+			font-size: 16px
+			margin: auto 0
+			margin-left: 10px
+			@media (max-width: 885px)
+				width: 150px
+				font-size: 14px
+				height: 35px
+			@media (max-width: 470px)
+				width: 90px
+				height: 30px
+				font-size: 9px
+				margin-left: 0
+		&__information
+			padding-left: 15px
+			span
+				display: block
+				color: #000005
+				font-size: 16px
+				font-weight: 700
+				line-height: 24px
+				@media (max-width: 990px)
+					font-size: 14px
+				@media (max-width: 865px)
+					font-size: 10px
+				@media (max-width: 470px)
+					font-size: 9px
+					display: none
+
+.header-content
+	position: relative
+	padding-bottom: 170px
+	display: flex 
+	margin-top: 50px
+	@media (max-width: 768px)
+		margin-top: 100px
+		padding-bottom: 130px
+	&__image
+		z-index: -1
+		max-width: 50%
+		right: 0
+		position: absolute
+		top: -5%
+
+		@media (max-width: 644px)
+			display: none
+		img
+			height: auto
+			width: 100%
+	.items
+		@media (max-width: 644px)
+			text-align: center
+		&__title
+			color: #000005
+			font-size: 124px
+			font-weight: 700
+			margin: 0
+			position: relative
+			display: inline-block
+			z-index: 2
+			@media (max-width: 1000px)
+				font-size: 100px
+			@media (max-width: 800px)
+				font-size: 70px
+			@media (max-width: 600px)
+				font-size: 50px
+			span
+				font-size: 160px
+				@media (max-width: 1000px)
+					font-size: 130px
+				@media (max-width: 800px)
+					font-size: 90px
+				@media (max-width: 600px)
+					font-size: 60px
+			&::before
+				content: "типография"
+				color: #000005
+				font-size: 58px
+				font-weight: 700
+				margin: 0
+				position: absolute
+				top: 15px
+				left: 17%
+				@media (max-width: 1000px)
+					font-size: 48px
+					top: 0
+					left: 16%
+				@media (max-width: 800px)
+					font-size: 34px
+				@media (max-width: 600px)
+					font-size: 24px
+
+		&__subtitle
+			color: #000005
+			font-size: 30px
+			font-weight: 400
+			max-width: 60%
+			z-index: 3
+			@media (max-width: 1000px)
+				font-size: 24px
+			@media (max-width: 768px)
+				font-size: 20px
+			@media (max-width: 644px)
+				margin: 10px auto
+		form
+			margin-top: 70px
+			z-index: 2
+			@media (max-width: 1000px)
+				display: flex
+				flex-wrap: wrap
+			@media (max-width: 644px)
+				width: 60%
+				margin: 30px auto
+			@media (max-width: 500px)
+				width: 80%
+			input
+				padding: 15px
+				border-radius: 15px
+				border: 1px solid #777777
+				color: #000005
+				font-size: 18px
+				font-weight: 400
+				max-width: 170px
+				margin-right: 30px
+				outline: none
+				@media (max-width: 644px)
+					width: 48%
+					margin-right: 2%
+				@media (max-width: 550px)
+					max-width: none
+					font-size: 14px
+					margin-bottom: 20px
+					border-radius: 10px
+					padding: 10px 5px
+			.call-button
+				z-index: 2
+				@media (max-width: 644px)
+					margin-top: 20px
+					width: 100%
+				@media (max-width: 550px)
+					margin-top: 0
+					height: 
+
+.sales
+	background-color: #222a35
+	padding-top: 30px
+	padding-bottom: 20px
+	.sales-slider
+		overflow: hidden
+		width: 100%
+		margin-bottom: 0
+		.slider-container
+			display: inline-block
+		.slider-item
+			display: flex
+			position: relative
+			height: 540px
+			width: 100%
+			outline: none
+			background-size: 100% 105%
+			@media (max-width: 768px)
+				height: 400px
+			@media (max-width: 500px)
+				height: 250px
+			&::before
+				content: ""
+				background-image: url(../img/lenta.png) 
+				background-repeat: no-repeat
+				background-size: 100%
+				width: 150px
+				height: 150px
+				position: absolute
+				left: 6px
+				top: 8px
+				z-index: 3
+				@media (min-width: 1000px)
+					width: 200px
+					height: 200px
+					left: 6px
+				@media (max-width: 768px)
+					left: 5px
+					top: 6px
+				@media (max-width: 640px)
+					width: 100px
+					height: 100px
+					top: 4px
+					left: 3px
+			&::after
+				content: "акция"
+				position: absolute
+				color: #fff
+				top: 45px
+				left: 20px
+				z-index: 4
+				font-size: 36px
+				font-weight: 700
+				transform: rotate(-37deg)
+				@media (max-width: 999px)
+					font-size: 30px
+					top: 36px
+					left: 15px
+				@media (max-width: 640px)
+					font-size: 20px
+					top: 20px
+					left: 10px
+			&__text
+				width: 45%
+				margin: 8px 0 0 5px
+				padding: 130px 40px 50px 120px
+				background-color: rgba(0, 0, 0, 0.67)
+				z-index: 2
+				position: relative
+				@media (max-width: 1090px)
+					padding: 100px 30px 40px 90px
+				@media (max-width: 768px)
+					padding: 15% 10px 0 40px
+					margin: 6px 0 0 3px
+				@media (max-width: 500px)
+					padding: 70px 10px 0 15px
+					margin: 4px 0 0 2px
+				&::before, &::after
+					content: ""
+					background-image: url(../img/krest.png)
+					position: absolute
+					background-size: 100%
+					width: 38px
+					height: 38px
+					@media (max-width: 500px)
+						width: 20px
+						height: 20px
+				&::before
+					top: 5%
+					right: 5%
+				&::after
+					bottom: 5%
+					left: 5%
+				img
+					position: absolute
+					height: auto
+					width: 100%
+					max-width: 150px
+					bottom: 10%
+					@media (min-width: 1000px)
+						bottom : 20%
+						right: 5%
+					@media (max-width: 999px)
+						bottom: 15%
+						right: 5%
+						max-width: 125px
+					@media (max-width: 768px)
+						max-width: 100px
+					@media (max-width: 500px)
+						max-width: 80px
+						right: 5%
+						bottom: 5%
+						z-index: -1
+					@media (max-width: 400px)
+						max-width: 50px
+				p
+					color: #ffffff
+					margin: 0
+					font-size: 42px
+					font-weight: 700
+					position: relative
+					@media (max-width: 990px)
+						font-size: 34px
+					@media (max-width: 768px)
+						font-size: 26px
+						height: 50%
+					@media (max-width: 500px)
+						font-size: 14px
+
+					span
+						font-size: 60px
+						@media(max-width: 990px)
+							font-size: 46px
+						@media (max-width: 768px)
+							font-size: 36px
+						@media (max-width: 500px)
+							font-size: 26px
+			&__img
+				position: absolute
+				right: 0
+				bottom: 0
+				width: 75%
+				z-index: 0
+				img
+					width: 100%
+					height: auto
+			&__button
+				position: absolute
+				bottom: 5%
+				right: 5%
+				font-size: 26px
+				font-weight: 700
+				text-align: left
+				padding-left: 20px
+				&::after
+					content: ""
+					position: absolute
+					right: 20px
+					background-image: url(../img/doubleArrow.png)
+					width: 26px
+					height: 26px
+					background-size: 100%
+					@media (max-width: 768px)
+						background-size: 50%
+						background-position: 100% 25%
+						background-repeat: no-repeat
+				@media(max-width: 768px)
+					width: 130px
+					font-size: 18px
+					height: 35px
+				@media(max-width: 500px)
+					right: -110%
+		.slick-arrow
+			position: absolute
+			top: 50%
+			height: 40px
+			width: 40px
+			z-index: 2
+			background-size: 100%
+			&::before
+				content: ""
+			@media (max-width: 768px)
+				height: 0
+				width: 0
+		.slick-next
+			background-image: url(../img/sliderright.png)
+			right: 15px
+		.slick-prev
+			background-image: url(../img/sliderleft.png)
+			left: 15px
+		.slick-dots
+			width: 100%
+			height: 15px
+			position: static
+			margin-top: 20px
+			display: flex
+			list-style-type: none
+			padding: 0
+			li
+				background-color: #9a9995
+				margin-left: 4%
+				width: 100%
+				height: 15px
+				margin-right: 0
+				button::before
+					content: ""
+				@media (max-width: 500px)
+					height: 8px
+			li:first-child
+				margin-left: 0
+			.slick-active
+				background-color: #f2b704
+
+.about
+	.about-company
+		text-align: center
+		padding-top: 50px
+		width: 100%
+		position: relative
+		&::after
+			content: ""
+			position: absolute
+			background-image: url(../img/blue-circle.png)
+			background-size: 100%
+			width: 300px
+			height: 300px
+			bottom: -20%
+			right: -25%
+			z-index: -1
+			@media (max-width: 1400px)
+				width: 250px
+				height: 250px
+				bottom: -20%
+				right: -10%
+			@media (max-width: 1100px)
+				width: 120px
+				height: 120px
+				right: -5%
+				bottom: -10%
+			@media (max-width: 768px)
+				width: 80px
+				height: 80px
+			@media (max-width: 500px)
+				display: none			
+
+		&__title
+			margin-bottom: 100px
+			margin-top: 0
+			font-size: 40px
+			color: #000005
+			font-weight: 700
+			@media (max-width: 900px)
+				font-size: 32px
+				margin-bottom: 70px
+			@media (max-width: 768px)
+				margin-bottom: 50px
+				font-size: 26px
+			@media (max-width: 500px)
+				font-size: 22px
+				margin-bottom: 30px
+		&__content
+			display: flex
+			justify-content: space-between
+			.content-images
+				position: relative
+				width: 50%
+				@media (max-width: 900px)
+					width: 40%
+				@media (max-width: 500px)
+					position: absolute
+					width: 60%
+				&__logo
+					position: absolute
+					left: 25%
+					width: 50%
+					@media (max-width: 500px)
+						left: 0
+						top: -100px
+						z-index: -1
+					img
+						height: auto
+						width: 100%
+
+				&__img
+					position: absolute
+					left: -25%
+					top: 30%
+					img
+						width: 100%
+						height: auto
+						@media (max-width: 500px)
+							display: none
+
+			.content-text
+				width: 50%
+				@media (max-width: 900px)
+					width: 60%
+				@media (max-width: 500px)
+					width: 100%
+				&__item
+					max-width: 
+					color: #000005
+					font-size: 24px
+					margin-left: 30%
+					position: relative
+					text-align: left
+					margin-bottom: 80px
+					@media (max-width: 900px)
+						font-size: 20px
+					@media (max-width: 768px)
+						font-size: 16px
+						margin-left: 20%
+						margin-bottom: 50px
+					&::before
+						content: ""
+						position: absolute
+						top: calc(50% - 25px)
+						left: -30%
+						background-image: url(../img/tick.png)
+						background-size: 100%
+						width: 50px
+						height: 50px
+						@media (max-width: 768px)
+							width: 30px
+							height: 30px
+							left: -20%
+
+	.prices
+		margin-top: 30px
+		width: 80%
+		margin: 0 auto
+		padding-bottom: 50px
+		@media (max-width: 520px)
+			width: 100%
+		.prices-title
+			text-align: center
+			color: #000005
+			font-size: 40px
+			font-weight: 700
+			@media (max-width: 1000px)
+				font-size: 32px
+			@media (max-width: 768px)
+				font-size: 26px
+			@media (max-width: 520px)
+				font-size: 20px
+		.prices-table
+			margin-top: 100px
+			text-align: left
+			position: relative
+			@media (max-width: 768px)
+				margin-top: 60px
+			.prices-table__button
+				font-size: 18px
+				font-weight: 700
+				position: absolute
+				right: 0
+				bottom: -60px
+				@media (max-width: 768px)
+					font-size: 14px
+					height: 30px
+					width: 130px
+					bottom: -40px
+			&__title
+				font-size: 30px
+				font-weight: 700
+				@media (max-width: 1000px)
+					font-size: 24px
+				@media (max-width: 768px)
+					font-size: 20px
+				@media (max-width: 520px)
+				 font-size: 16px
+			&__subtitle
+				color: #4da4d3
+				font-size: 26px
+				font-weight: 400
+				@media (max-width: 1000px)
+					font-size: 20px
+				@media (max-width: 768px)
+					font-size: 16px
+				@media (max-width: 520px)
+					font-size: 12px
+			table
+				width: 100%
+				border-spacing: 0px
+				border-collapse: collapse
+				margin-bottom: 50px
+				th
+					font-size: 20px
+					@media (max-width: 1000px)
+						font-size: 16px
+					@media (max-width: 768px)
+						font-size: 12px
+					@media (max-width: 520px)
+						font-size: 10px
+				tr:first-child th
+					font-size: 22px
+					font-weight: 700
+					@media (max-width: 1000px)
+						font-size: 18px
+					@media (max-width: 768px)
+						font-size: 14px
+					@media (max-width: 520px)
+						font-size: 12px
+				td
+					font-size: 18px
+					font-weight: 400
+					padding-left: 20px
+					position: relative
+					@media (max-width: 1000px)
+						font-size: 14px
+					@media (max-width: 768px)
+						font-size: 10px
+					@media (max-width: 520px)
+						font-size: 8px
+						padding-left: 10px
+				tr
+					height: 40px
+					@media (max-width: 1000px)
+						height: 30px
+					@media (max-width: 768px)
+						height: 24px
+					@media (max-width: 520px)
+						height: 18px
+				tr:not(first-child):nth-child(odd) td
+					background-color: #222a35
+					color: #ffffff
+				img
+					height: auto
+					width: 100px
+					position: absolute
+					top: -100%
+					z-index: 1
+					left: -300%
+					@media (max-width: 1000px)
+						width: 60px
+						top: -65%
+						left: -200%
+					@media (max-width: 768px)
+						width: 50px
+						top: -60%
+						left: -150%
+					@media (max-width: 600px)
+						left: -100%
+					@media (max-width: 520px)
+						width: 40px
+						left: -200%
+			&__indicator
+				height: 15px
+				width: 15px
+				border-radius: 50%
+				position: absolute
+				right: -20px
+				top: 0
+				@media (max-width: 768px)
+					height: 10px
+					width: 10px
+				@media (max-width: 520px)
+					display: none
+				&::before,&::after
+					content: ""
+					width: 15px
+					height: 15px
+					border-radius: 50%
+					position: absolute
+					right: 0
+					@media (max-width: 768px)
+						height: 10px
+						width: 10px
+				&::before
+					top: -20px
+					@media (max-width: 768px)
+						top: -15px
+				&::after
+					top: 20px
+					@media (max-width: 768px)
+						top: 15px
+				&._1
+					box-shadow: inset 0 0 0 1px #9f87c0
+					&::before
+						background-color: #9f87c0
+					&::after
+						box-shadow: inset 0 0 0 1px #9f87c0
+				&._2
+					background-color: #9f87c0
+					&::before
+						box-shadow: inset 0 0 0 1px #9f87c0
+					&::after
+						box-shadow: inset 0 0 0 1px #9f87c0
+				&._3
+					box-shadow: inset 0 0 0 1px #9f87c0
+					&::after
+						background-color: #9f87c0
+					&::before
+						box-shadow: inset 0 0 0 1px #9f87c0
+
+.procedure
+	background-color: #222a35
+	padding: 50px 0
+	.procedure-row
+		&__title
+			position: relative
+			h1
+				color: #fefeff
+				font-size: 40px
+				font-weight: 700
+				font-variant: small-caps
+				width: 40%
+				@media (max-width: 1040px)
+					width: 50%
+				@media (max-width: 870px)
+					font-size: 30px
+				@media (max-width: 768px)
+					font-size: 24px
+				@media (max-width: 520px)
+					font-size: 18px
+					width: 100%
+					margin-bottom: 60px
+			.call-button
+				position: absolute
+				right: 0
+				top: 15%
+				@media (max-width: 768px)
+					font-size: 15px
+					width: 150px
+					height: 35px
+				@media (max-width: 520px)
+					display: block
+					top: 60px
+					left: calc(50% - 75px)
+
+		.row-items
+			display: flex
+			justify-content: space-between
+			flex-wrap: wrap
+			width: 90%
+			margin: 0 auto
+			@media (max-width: 768px)
+				justify-content: space-evenly
+			@media (max-width: 460px)
+				width: 100%
+			.flex-break
+				@media (max-width: 768px)
+					flex-basis: 100%
+					height: 0
+			&__item
+				text-align: center
+				width: 20%
+				z-index: 1
+				@media (max-width: 460px)
+					width: 30%
+				h2
+					color: #fefeff
+					font-size: 32px
+					font-weight: 700
+					text-transform: uppercase
+					margin-bottom: 40px
+					@media (max-width: 850px)
+						margin-bottom: 10px
+						font-size: 28px
+					@media (max-width: 550px)	
+						font-size: 22px 
+				p
+					color: #fefeff
+					font-size: 24px
+					font-weight: 400
+					line-height: 30px
+					@media (max-width: 850px)
+						font-size: 18px
+					@media (max-width: 550px)
+						font-size: 14px
+				.item-img
+					height: 120px
+					position: relative
+					@media (max-width: 768px)
+						height: 80px
+					img
+						width: 50%
+						height: auto
+						transform: translateY(-50%)
+						top: 50%
+						position: relative
+
+.advantages
+	.container
+		width: 75%
+		margin: 0 auto
+		text-align: center
+		position: relative
+		@media (max-width: 1000px)
+			width: 65%
+		@media (max-width: 768px)
+			width: 100%
+		&::before
+			content: ""
+			position: absolute
+			top: -10%
+			left: -20%
+			width: 300px
+			height: 300px
+			background-size: 100%
+			background-repeat: no-repeat
+			background-image: url(../img/yellow.png)
+			@media (max-width: 1400px)
+				width: 250px
+				height: 250px
+			@media (max-width: 1250px)
+				left: -30%
+				width: 200px
+				height: 200px
+			@media (max-width: 1000px)
+				left: -45%
+			@media (max-width: 768px)
+				display: none
+		&::after
+			content: ""
+			position: absolute
+			width: 300px
+			height: 300px
+			bottom: 40%
+			right: -30%
+			background-size: 100%
+			background-repeat: no-repeat
+			background-image: url(../img/pink.png)
+			@media (max-width: 1400px)
+				width: 250px
+				height: 250px
+			@media (max-width: 1100px)
+				width: 200px
+				height: 200px
+				right: -40%
+			@media (max-width: 768px)
+				display: none
+
+	&-title
+		color: #000000
+		font-size: 40px
+		font-weight: 700
+		z-index: 1
+		font-variant: small-caps
+		@media (max-width: 768px)
+			font-size: 34px
+		@media (max-width: 550px)
+			font-size: 24px
+			
+	&-item:nth-child(odd)
+		flex-direction: row-reverse
+		@media (max-width: 450px)
+			flex-direction: column
+	&-item
+		display: flex
+		justify-content: space-evenly
+		margin-bottom: 30px
+		@media (max-width: 550px)
+			margin-bottom: 0
+		@media (max-width: 450px)
+			flex-direction: column
+			align-items: center
+		&__img
+			background-repeat: no-repeat
+			background-size: 100%
+			width: 25%
+			background-position: top
+			position: relative
+			img
+				height: auto
+				width: 75%
+		&__text
+			width: 50%
+			text-align: left
+			@media (max-width: 450px)
+				width: 80%
+				margin-bottom: 20px
+			h4
+				color: #000000
+				font-family: Roboto Slab
+				font-size: 26px
+				font-weight: 700
+				font-variant: small-caps
+				margin: 10px 0
+				@media (min-width: 1500px)
+					font-size: 36px
+				@media (max-width: 550px)
+					font-size: 18px
+			p
+				color: #000000
+				font-family: Roboto Slab
+				font-size: 22px
+				font-weight: 400
+				line-height: 28px
+				font-variant: small-caps
+				@media (min-width: 1500px)
+					font-size: 30px
+				@media (max-width: 550px)
+					font-size: 14px
+					line-height: 16px
+	&-bottom-line
+		height: 12px
+		background-color: #ffc000
+		width: 50%
+		margin: 20px auto
+		position: relative
+		@media (max-width: 768px)
+			height: 8px
+
+.location
+	text-align: center
+	position: relative
+	h2
+		color: #000000
+		font-size: 40px
+		font-weight: 700
+		font-variant: small-caps
+		@media (max-width: 1000px)
+			font-size: 36px
+		@media (max-width: 768px)
+			font-size: 28px
+		@media (max-width: 530px)
+			font-size: 22px
+		@media (max-width: 400px)
+			font-size: 18px
+	#map
+		height: 400px
+		width: 100%
+	&-window
+		position: absolute
+		background-color: #222a35
+		top: 25%
+		height: 300px
+		right: 10%
+		width: 250px
+		z-index: 1
+		padding: 10px
+		@media (min-width: 1400px)
+			right: 25%
+		@media (max-width: 850px)
+			height: 250px
+			width: 200px
+		@media (max-width: 768px)
+			position: relative
+			width: 100%
+			right: 0
+			height: 150px
+		h2
+			font-size: 20px
+			color: #ffffff
+			font-weight: 700
+			@media (max-width: 768px)
+				font-size: 16px
+			@media (max-width: 550px)
+				font-size: 12px
+		form
+			margin-top: 30px
+			@media (max-width: 850px)
+				margin-top: 0
+			input:first-child
+				margin-top: 0
+			input
+				margin-top: 25px
+				background: transparent
+				border-radius: 10px
+				color: #fff
+				padding: 10px 5px
+				border: 1px solid #fff
+				outline: none
+				@media (max-width: 850px)
+					margin-top: 15px
+				@media (max-width: 550px)
+					width: 60%
+					font-size: 12px
+					margin-top: 5px
+					padding: 5px
+			button
+				margin-top: 20px
+				width: 165px
+				border-radius: 15px
+				height: 40px
+				@media (max-width: 850px)
+					margin-top: 15px
+				@media (max-width: 550px)
+					margin-top: 15px
+					width: 60%
+					font-size: 12px
+					height: 25px
+
+.footer
+	background-color: #ffc000
+	.footer-row
+		display: flex
+		align-items: center
+		height: 90px
+	.logo
+		flex-grow: 1
+	.information
+		padding-left: 15px
+		span
+			display: block
+			color: #000005
+			font-size: 16px
+			font-weight: 700
+			line-height: 24px
+			@media (max-width: 990px)
+				font-size: 14px
+			@media (max-width: 865px)
+				font-size: 10px
+			@media (max-width: 470px)
+				font-size: 9px
+	.call-button
+		text-transform: uppercase
+		height: 40px
+		width: 170px
+		font-size: 16px
+		margin: auto 0
+		margin-left: 10px
+		@media (max-width: 885px)
+			width: 150px
+			font-size: 14px
+			height: 35px
+		@media (max-width: 470px)
+			width: 90px
+			height: 30px
+			font-size: 9px
